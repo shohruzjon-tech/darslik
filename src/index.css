@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
-  background: linear-gradient(270deg,#071b52 0,teal);
 }
 
 code {
@@ -18,4 +17,9 @@ code {
 *{
   margin: 0;
   padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }

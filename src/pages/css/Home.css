@@ -1,0 +1,8 @@
+.home_container{
+    width: 80%;
+    margin: auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}

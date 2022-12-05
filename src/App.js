@@ -1,34 +1,21 @@
-import "./App.css";
 import React from "react";
-import axios from "axios";
-import Card from "./components/Card";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import AppLayout from "./components/AppLayout";
+import NewProducts from "./pages/NewProducts";
+import AboutUs from "./pages/AboutUs";
+import Product from "./pages/Product";
 
 function App() {
-  
-  const [state, setState] = React.useState([]);
-  
-  async function getMonsters (){
-    try {
-      let res = await axios.get("https://jsonplaceholder.typicode.com/users");
-      setState(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  React.useEffect(()=>{
-    getMonsters();
-  }, []);
-
- 
-
-
   return (
-    <div className="container">
-           {
-            state.map((monster)=> <Card key={monster.id} monster={monster}/>)
-           }
-    </div>
+    <AppLayout ism="Shohruzjon">
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/new-products" element={<NewProducts />} />
+        <Route exact path="/about-us" element={<AboutUs />} />
+        <Route exact path="/product/:id" element={<Product />} />
+      </Routes>
+    </AppLayout>
   );
 }
 

@@ -1,0 +1,20 @@
+.footer_container{
+    background-color: rgba(25, 22, 22, 0.94);
+    padding: 30px;
+}
+
+.footer_list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    list-style: none;
+}
+
+.footer_list_item_link{
+    transition: 0.4s ease-in-out;
+}
+
+.footer_list_item_link:hover{
+    color: #108a00;
+}
