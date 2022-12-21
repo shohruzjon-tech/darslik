@@ -10,7 +10,7 @@ function Home() {
 
   async function getProducts() {
     const res = await axios.get(
-      "http://35.76.127.20:443/api/product?page=1"
+      "https://uzstore-new.herokuapp.com/api/product?page=1"
     );
     setData(res.data.products);
   }

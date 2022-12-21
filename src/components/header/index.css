@@ -30,7 +30,7 @@
 }
 
 .header_search input {
-  width: 300px;
+  width: 400px;
   padding: 9px 10px;
   border-radius: 25px;
   border: 1px solid black;
@@ -45,4 +45,46 @@
 
 .header_profile h4 {
   margin: 0 10px;
+}
+
+
+.header_search{
+  position: relative;
+  width: max-content;
+}
+
+.search_result{
+  position: absolute;
+  width: 100%;
+  min-height: 100px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+  z-index: 100;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.result_card{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.result_img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.result_content{
+  margin-left: 10px;
+}
+
+.result_content h4{
+  transition: 0.3s ease-in-out;
+}
+
+.result_card:hover .result_content h4{
+  color: #108a00;
 }

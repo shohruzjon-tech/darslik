@@ -15,7 +15,7 @@ const Product = () => {
 
   async function getProduct() {
     const res = await axios.get(
-      `http://35.76.127.20:443/api/product/${params.id}`
+      `https://uzstore-new.herokuapp.com/api/product/${params.id}`
     );
     setData(res.data);
   }
@@ -27,7 +27,7 @@ const Product = () => {
   async function addOrder(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("http://35.76.127.20:443/api/order/add", {
+      const res = await axios.post("https://uzstore-new.herokuapp.com/api/order/add", {
         city_id: 1,
         name: form.name,
         orderItems: [{ quantity: 1, productId: params.id }],
@@ -50,7 +50,6 @@ const Product = () => {
         <img src={data.images ? data?.images[0] : ""} alt={data.description} />
         <div className="spr_content_container">
           <h2>{data.name}</h2>
-          <p>{data.description}</p>
           <form className="buy_form" onSubmit={addOrder}>
             <div className="form_input_container">
               <label htmlFor="name">Ismingizni kiriting</label>
@@ -78,6 +77,7 @@ const Product = () => {
               </button>
             </div>
           </form>
+          <div dangerouslySetInnerHTML={{__html: data.description}}/>
         </div>
       </div>
     </div>
