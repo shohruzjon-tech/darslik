@@ -5,6 +5,11 @@ import AppLayout from "./components/AppLayout";
 import NewProducts from "./pages/NewProducts";
 import AboutUs from "./pages/AboutUs";
 import Product from "./pages/Product";
+import AuthLogin from "./pages/AuthLogin";
+import AuthRegister from "./pages/AuthRegister";
+import ProfileDetails from "./pages/profile/Details";
+import ProfileBuyurtmalar from "./pages/profile/Buyurtmalar";
+import ProfileBalans from "./pages/profile/Balance";
 
 function App() {
   return (
@@ -14,6 +19,11 @@ function App() {
         <Route exact path="/new-products" element={<NewProducts />} />
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/product/:id" element={<Product />} />
+        <Route exact path="/auth/login" element={<AuthLogin />} />
+        <Route exact path="/auth/register" element={<AuthRegister />} />
+        <Route exact path="/profile" element={<ProfileDetails />} />
+        <Route exact path="/profile/orders" element={<ProfileBuyurtmalar />} />
+        <Route exact path="/profile/balance" element={<ProfileBalans />} />
       </Routes>
     </AppLayout>
   );

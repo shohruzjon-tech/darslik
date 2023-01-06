@@ -10,7 +10,7 @@ function Home() {
 
   async function getProducts() {
     const res = await axios.get(
-      "https://uzstore-new.herokuapp.com/api/product?page=4"
+      "https://newshop.herokuapp.com/api/product?page=1"
     );
     setData(res.data.products);
   }

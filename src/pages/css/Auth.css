@@ -1,0 +1,86 @@
+.auth_container{
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.auth_label{
+    margin-bottom: 5px;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.auth_input{
+    width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.auth_btnContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.auth_btn{
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    background-color: orange;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth_btn:hover{
+    background-color: rgb(207, 151, 48);
+}
+
+.auth_content{
+    margin-bottom: 20px;
+}
+
+.auth_content p{
+    text-align: center;
+}
+
+.auth_content_header{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.auth_register_notice{
+    padding: 20px 10px;
+    text-align: center;
+    color: #000;
+}
+
+.auth_register_notice a{
+    color: blue;
+    text-decoration: underline;
+}
+
+.password_input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.password_input button{
+    height: 100%;
+    padding: 12px;
+    border: none;
+    background-color: orange;
+    border-radius: 5px;
+    cursor: pointer;
+}

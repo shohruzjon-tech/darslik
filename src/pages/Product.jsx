@@ -15,7 +15,7 @@ const Product = () => {
 
   async function getProduct() {
     const res = await axios.get(
-      `https://uzstore-new.herokuapp.com/api/product/${params.id}`
+      `https://newshop.herokuapp.com/api/product/${params.id}`
     );
     setData(res.data);
   }
@@ -27,7 +27,7 @@ const Product = () => {
   async function addOrder(e) {
     e.preventDefault();
     try {
-      const res = await axios.post("https://uzstore-new.herokuapp.com/api/order/add", {
+      const res = await axios.post("https://newshop.herokuapp.com/api/order/add", {
         city_id: 1,
         name: form.name,
         orderItems: [{ quantity: 1, productId: params.id }],
@@ -47,7 +47,7 @@ const Product = () => {
   return (
     <div className="Product_container">
       <div className="grid_container">
-        <img src={data.images ? data?.images[0] : ""} alt={data.description} />
+        <img src={data.image? data?.image[0] : ""} alt={data.description} />
         <div className="spr_content_container">
           <h2>{data.name}</h2>
           <form className="buy_form" onSubmit={addOrder}>

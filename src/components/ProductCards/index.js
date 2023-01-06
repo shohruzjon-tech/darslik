@@ -5,7 +5,7 @@ const ProductCard1 = ({ product }) => {
   return (
     <a href={`/product/${product._id}`}>
       <div className="pr_card_container">
-        <img src={product?.image} alt="Ushbu mahsulot test uchun qo'yildi" />
+        <img src={product?.image[0]} alt="Ushbu mahsulot test uchun qo'yildi" />
         <div className="pr_card_content">
           <p className="pr_card_name">{product.name}</p>
           <h5 className="pr_card_stock">41 dona qoldi</h5>

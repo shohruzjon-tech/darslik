@@ -6,6 +6,7 @@ import "./index.css";
 const Header = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const isUserAuth = false;
 
   const handleOpen = () => {
     setOpen(true);
@@ -20,11 +21,18 @@ const Header = () => {
   async function getProducts(e) {
     handleOpen();
     const res = await axios.get(
-      `https://uzstore-new.herokuapp.com/api/product?filter=${e.target.value}`
+      `https://newshop.herokuapp.com/api/product?filter=${e.target.value}`
     );
     setData(res.data.products);
   }
    
+  const handleProfileClick = () =>{
+    if(!isUserAuth){
+      navigate("/auth/login");
+    }else{
+      navigate("/profile");
+    }
+  }
 
   return (
     <div className="header_container">
@@ -39,7 +47,7 @@ const Header = () => {
           <a href="/about-us">Biz haqimizda</a>
         </li>
         <li>
-          <a href="">Kiyimlar</a>
+          <a href="/">Kiyimlar</a>
         </li>
       </ul>
       <div className="header_search">
@@ -52,7 +60,7 @@ const Header = () => {
                   <img
                     className="result_img"
                     alt={product.description}
-                    src={product.image}
+                    src={product?.image[0]}
                   />
                   <div className="result_content">
                     <h4>{product.name}</h4>
@@ -65,8 +73,8 @@ const Header = () => {
         ) : null}
       </div>
       <div className="header_profile">
-        <img className="header_profile_img" src="/assets/th.jfif" />
-        <h4>Shohruzjon</h4>
+        <img onClick={handleProfileClick} className="header_profile_img" src="/assets/th.jfif" />
+        {/* <h4>Shohruzjon</h4> */}
       </div>
     </div>
   );

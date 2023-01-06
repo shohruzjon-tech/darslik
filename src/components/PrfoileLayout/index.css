@@ -1,0 +1,47 @@
+.pr_ly_container{
+    width: 60%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-gap: 20px;
+}
+
+.pr_ly_sidebar{
+    margin-right: 40px;
+}
+
+.ly_list{
+    list-style: none;
+}
+
+.ly_list li{
+    padding: 7px 5px;
+    background-color: gray;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.ly_list li:hover{
+    background-color: orange;
+}
+
+.status_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    margin: 20px 0;
+}
+
+
+.status_container .pdt_media{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route_active{
+    background-color: orange !important;
+}
