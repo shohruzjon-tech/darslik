@@ -1,0 +1,37 @@
+.table_container {
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.table_box {
+  border-collapse: collapse;
+}
+
+.table_head {
+  background: #f1f3f5;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.table_box th {
+  width: 300px;
+  text-align: left;
+  color: #a2a0b3;
+  padding: 10px;
+}
+
+.table_body td {
+  padding: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.table_status {
+  display: block;
+  width: 70%;
+  background-color: #edeeef;
+  border-radius: 18px;
+  padding: 3px 7px;
+  text-align: center;
+}

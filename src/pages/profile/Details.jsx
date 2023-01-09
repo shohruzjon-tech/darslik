@@ -4,7 +4,7 @@ import ProfileLayout from "../../components/PrfoileLayout";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const getStatusName = (type) => {
+export const getStatusName = (type) => {
   switch (type) {
     case "new":
       return {name: "Yangi", color: "green"};
