@@ -32,7 +32,7 @@ const AuthLogin = () => {
       localStorage.setItem("testToken", res.data.token);
       navigate("/profile");
     } catch (error) {
-      alert(error.message)
+      alert(error.message);
     }
   }
   

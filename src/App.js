@@ -10,6 +10,8 @@ import AuthRegister from "./pages/AuthRegister";
 import ProfileDetails from "./pages/profile/Details";
 import ProfileBuyurtmalar from "./pages/profile/Buyurtmalar";
 import ProfileBalans from "./pages/profile/Balance";
+import UserGame from "./pages/profile/Game";
+import Market from "./pages/profile/Market";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route exact path="/profile" element={<ProfileDetails />} />
         <Route exact path="/profile/orders" element={<ProfileBuyurtmalar />} />
         <Route exact path="/profile/balance" element={<ProfileBalans />} />
+        <Route exact path="/profile/market" element={<Market />} />
+        <Route exact path="/profile/game" element={<UserGame />} />
       </Routes>
     </AppLayout>
   );

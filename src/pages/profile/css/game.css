@@ -1,0 +1,21 @@
+.game_banner {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.media_container {
+  width: 100%;
+  height: max-content;
+  position: relative;
+}
+
+.game_media_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000066;
+  border-radius: 10px;
+}

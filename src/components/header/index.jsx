@@ -6,7 +6,7 @@ import "./index.css";
 const Header = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const isUserAuth = false;
+  const isUserAuth = localStorage.getItem("testToken");
 
   const handleOpen = () => {
     setOpen(true);
@@ -25,14 +25,14 @@ const Header = () => {
     );
     setData(res.data.products);
   }
-   
-  const handleProfileClick = () =>{
-    if(!isUserAuth){
+
+  const handleProfileClick = () => {
+    if (!isUserAuth) {
       navigate("/auth/login");
-    }else{
+    } else {
       navigate("/profile");
     }
-  }
+  };
 
   return (
     <div className="header_container">
@@ -56,7 +56,10 @@ const Header = () => {
           <div className="search_result" onMouseLeave={handleClose}>
             {data?.map((product) => {
               return (
-                <div className="result_card" onClick={()=>navigate(`/product/${product._id}`)}>
+                <div
+                  className="result_card"
+                  onClick={() => navigate(`/product/${product._id}`)}
+                >
                   <img
                     className="result_img"
                     alt={product.description}
@@ -73,7 +76,11 @@ const Header = () => {
         ) : null}
       </div>
       <div className="header_profile">
-        <img onClick={handleProfileClick} className="header_profile_img" src="/assets/th.jfif" />
+        <img
+          onClick={handleProfileClick}
+          className="header_profile_img"
+          src="/assets/th.jfif"
+        />
         {/* <h4>Shohruzjon</h4> */}
       </div>
     </div>
