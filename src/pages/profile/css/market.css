@@ -1,0 +1,78 @@
+.market_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.market_card {
+  width: 100%;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.market_card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.py {
+  padding: 8px 0;
+}
+.mb-2 {
+  margin-bottom: 10px;
+}
+
+.border-top {
+  border-top: 1px solid #ddd;
+}
+
+.market_cr {
+  border: none;
+  border-radius: 10px;
+  padding: 7px 10px;
+  background-color: rgb(196, 63, 63);
+  color: #fff;
+  cursor: pointer;
+}
+
+.market_del {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  color: white;
+  background-color: rgb(12, 167, 239);
+  cursor: pointer;
+}
+
+.market_pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+.pag_button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 8px;
+  background-color: rgba(190, 141, 49, 0.493);
+  color: white;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.active {
+  border: 1px solid black;
+  background: orange;
+}

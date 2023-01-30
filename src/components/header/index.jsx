@@ -41,7 +41,7 @@ const Header = () => {
           <a href="/">Bosh sahifa</a>
         </li>
         <li>
-          <a href="/new-products">Yangi mahsulotlar</a>
+          <a href="/all-products">Barchasi</a>
         </li>
         <li>
           <a href="/about-us">Biz haqimizda</a>

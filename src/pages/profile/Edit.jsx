@@ -25,7 +25,7 @@ export const getStatusName = (type) => {
   }
 };
 
-const ProfileDetails = () => {
+const ProfileEdit = () => {
   const [data, setData] = useState({});
 
   const getProfileData = async () => {
@@ -60,27 +60,27 @@ const ProfileDetails = () => {
               <h6>Balans: {data?.user?.balance} so'm</h6>
             </div>
           </div>
-          <span>{data?.user?.status ? "FAOL" : "BLOKLANGAN"}</span>
-          <a href="/profile/edit">
-            <button className="btn">O'ZGARTIRISH</button>
-          </a>
-        </div>
-        <div className="status_container">
-          {Object.entries(data?.orderCount ? data?.orderCount : {}).map(
-            (item) => {
-              const status = getStatusName(item[0]);
-              return (
-                <div className="pdt_media">
-                  <h4 style={{ color: status.color }}>{item[1]}</h4>
-                  <h5 style={{ color: status.color }}>{status.name}</h5>
-                </div>
-              );
-            }
-          )}
+          <form className="edit_form">
+            <div className="input_container">
+              <input placeholder="Ism" />
+            </div>
+            <div className="input_container">
+              <input placeholder="Ism" />
+            </div>
+            <div className="input_container">
+              <input placeholder="Ism" />
+            </div>
+            <div className="input_container">
+              <input placeholder="Ism" />
+            </div>
+            <div className="input_container">
+              <button>SAQLASH</button>
+            </div>
+          </form>
         </div>
       </div>
     </ProfileLayout>
   );
 };
 
-export default ProfileDetails;
+export default ProfileEdit;

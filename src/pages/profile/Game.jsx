@@ -20,7 +20,6 @@ const UserGame = () => {
     getGame();
   }, []);
 
-  console.log(data);
 
   return (
     <ProfileLayout>

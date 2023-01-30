@@ -22,5 +22,18 @@ code {
 
 a{
   text-decoration: none;
-  color: white;
+  color: #fff;
 }
+
+.btn{
+  border: none;
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: rgba(255, 166, 0, 0.567);
+}
+
