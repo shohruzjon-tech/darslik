@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./index.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const isUserAuth = localStorage.getItem("testToken");
+
+  const cartAmount = useSelector((state) => state.cart.cartAmount);
 
   const handleOpen = () => {
     setOpen(true);
@@ -76,10 +79,15 @@ const Header = () => {
         ) : null}
       </div>
       <div className="header_profile">
+        <div className="cart_container">
+          <img className="cartIcon" src="/assets/cart.jpg" alt="Cart" />
+          <span className="cart_badge">{cartAmount}</span>
+        </div>
         <img
           onClick={handleProfileClick}
           className="header_profile_img"
           src="/assets/th.jfif"
+          alt="header"
         />
         {/* <h4>Shohruzjon</h4> */}
       </div>

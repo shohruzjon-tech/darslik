@@ -38,7 +38,7 @@ function Home() {
     <>
       <div className="home_container">
         {data?.products?.map((res) => {
-          return <ProductCard1 product={res} />;
+          return <ProductCard1 key={res?._id} product={res} />;
         })}
       </div>
       <div className="market_pagination">
@@ -54,6 +54,7 @@ function Home() {
           .map((data, indx) => {
             return (
               <button
+                key={indx}
                 onClick={() => handlePageChange(indx + 1)}
                 className={`pag_button ${indx + 1 === page ? "active" : ""}`}
               >
