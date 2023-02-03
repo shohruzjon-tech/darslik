@@ -79,7 +79,7 @@ const Header = () => {
         ) : null}
       </div>
       <div className="header_profile">
-        <div className="cart_container">
+        <div className="cart_container" onClick={() => navigate("/cart")}>
           <img className="cartIcon" src="/assets/cart.jpg" alt="Cart" />
           <span className="cart_badge">{cartAmount}</span>
         </div>

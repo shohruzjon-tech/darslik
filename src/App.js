@@ -13,6 +13,7 @@ import ProfileBalans from "./pages/profile/Balance";
 import UserGame from "./pages/profile/Game";
 import Market from "./pages/profile/Market";
 import ProfileEdit from "./pages/profile/Edit";
+import CartPage from "./pages/Cart";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/profile/balance" element={<ProfileBalans />} />
         <Route exact path="/profile/market" element={<Market />} />
         <Route exact path="/profile/game" element={<UserGame />} />
+        <Route exact path="/cart" element={<CartPage />} />
       </Routes>
     </AppLayout>
   );
