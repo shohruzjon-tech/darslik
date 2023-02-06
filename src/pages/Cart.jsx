@@ -1,7 +1,11 @@
 import "./css/cart.css";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromBasket } from "../redux-store/cart.slice";
+import {
+  removeFromBasket,
+  increaseCart,
+  decreaseCart,
+} from "../redux-store/cart.slice";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -10,6 +14,15 @@ const CartPage = () => {
   const handleDelete = (id) => {
     dispatch(removeFromBasket(id));
   };
+
+  const handleIncrease = (id) => {
+    dispatch(increaseCart(id));
+  };
+
+  const handleDecrease = (id) => {
+    dispatch(decreaseCart(id));
+  };
+
   return (
     <div className="cart_container">
       {cartList.map((item) => (
@@ -23,9 +36,19 @@ const CartPage = () => {
           </div>
           <div className="rightActions">
             <div className="actions">
-              <button>QO'SH</button>
+              <button
+                onClick={() => handleIncrease(item._id)}
+                disabled={item.quantity === 10}
+              >
+                QO'SH
+              </button>
               <span className="action_value">{item.quantity}</span>
-              <button>AYIR</button>
+              <button
+                onClick={() => handleDecrease(item._id)}
+                disabled={item.quantity === 1}
+              >
+                AYIR
+              </button>
             </div>
             <button
               className="clear_button"
@@ -36,6 +59,20 @@ const CartPage = () => {
           </div>
         </div>
       ))}
+      <div className="cart_order_form">
+        <h2 className="form_header">BUYURTMA BERISH UCHUN</h2>
+        <div className="input_container">
+          <label htmlFor="">Telefon raqam</label>
+          <input placeholder="Telefon raqam"/>
+        </div>
+        <div className="input_container">
+          <label htmlFor="">Ism va familiya</label>
+          <input placeholder="Ism"/>
+        </div>
+        <div className="form_btn_container">
+          <button className="btn">BUYURTMA BERISH</button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -29,14 +29,31 @@ export const cartSlice = createSlice({
       const clonedState = [...state.products];
       const findIfExist = clonedState.find((item) => item._id === payload);
       const filterState = clonedState.filter((item) => item._id !== payload);
-
-      if (findIfExist && findIfExist.quantity > 1) {
-        state.products = filterState;
+      state.products = filterState;
+      state.cartAmount -= findIfExist.quantity;
+    },
+    increaseCart: (state, { payload }) => {
+      const productIndex = state.products.findIndex(
+        (item) => item._id === payload
+      );
+      if (state.products[productIndex].quantity < 10) {
+        state.products[productIndex].quantity += 1;
+        state.cartAmount += 1;
+      }
+    },
+    decreaseCart: (state, { payload }) => {
+      const productIndex = state.products.findIndex(
+        (item) => item._id === payload
+      );
+      if (state.products[productIndex].quantity > 1) {
+        state.products[productIndex].quantity -= 1;
+        state.cartAmount -= 1;
       }
     },
   },
 });
 
-export const { addToCart, removeFromBasket } = cartSlice.actions;
+export const { addToCart, removeFromBasket, decreaseCart, increaseCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
